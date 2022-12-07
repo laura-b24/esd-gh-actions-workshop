@@ -34,3 +34,6 @@ jobs:
       - name: Print coverage
         working-directory: ./deno
         run: deno coverage cov_profile
+        
+      - name: Checkout repository
+        uses: actions/checkout@v3
