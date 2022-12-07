@@ -2,9 +2,9 @@ name: Deno CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ 'main' ]
   pull_request:
-    branches: [ main ]
+    branches: [ 'main' ]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref }}
@@ -34,3 +34,6 @@ jobs:
       - name: Print coverage
         working-directory: ./deno
         run: deno coverage cov_profile
+        
+      - name: Checkout repository
+        uses: actions/checkout@v3
